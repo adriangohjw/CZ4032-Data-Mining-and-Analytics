@@ -3,6 +3,10 @@ from mlxtend.preprocessing import TransactionEncoder
 from mlxtend.frequent_patterns import apriori, association_rules
 
 
+def delimiter():
+  return '___'
+
+
 def load_dataset(filename, delimiter):
   return pd.read_csv(filename, index_col=False, delimiter=delimiter)
 
@@ -38,7 +42,7 @@ def encode_df(df):
 
 def append_col_name_to_dataframe(df):
   for col in list(df.columns):
-    df[col] = col + "_" + df[col]
+    df[col] = col + delimiter() + df[col]
   
   return df
 
