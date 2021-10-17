@@ -40,6 +40,11 @@ def encode_df(df):
   return result
 
 
+def filter_df_columns(df, colnames=None):
+  filtered_df = df if colnames is None else df[colnames]
+  return filtered_df
+
+
 def append_col_name_to_dataframe(df):
   for col in list(df.columns):
     df[col] = col + delimiter() + df[col]
@@ -47,11 +52,9 @@ def append_col_name_to_dataframe(df):
   return df
 
 
-def get_frequent_itemsets(df, min_support=0.6, colnames=None):
-  filtered_df = df if colnames is None else df[colnames]
-  filtered_df = append_col_name_to_dataframe(filtered_df)
-  filtered_df_lol = df_to_lists_of_list(filtered_df)
-  encoded_data = encode_df(filtered_df_lol)
+def get_frequent_itemsets(df, min_support=0.6):
+  df_lol = df_to_lists_of_list(df)
+  encoded_data = encode_df(df_lol)
   freq_items = apriori(encoded_data, min_support=min_support, use_colnames=True)
 
   return freq_items
