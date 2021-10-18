@@ -36,10 +36,11 @@ class RuleSelection:
       self.data['guess'].isnull()
     ]
 
-    for key, value in rule['antecedents'].items():
-      selected_rows = selected_rows[
-        selected_rows[key].str.split().apply(lambda x: len(set(x).intersection(set(value)))) > 0
-      ]
+    for colname, values in rule['antecedents'].items():
+      for value in values:
+        selected_rows = selected_rows[
+          selected_rows[colname] == value
+        ]
 
     return selected_rows
 
