@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import math
+import matplotlib.pyplot as plt
 from mlxtend.preprocessing import TransactionEncoder
 from mlxtend.frequent_patterns import apriori, association_rules
 
@@ -137,3 +138,10 @@ def get_association_rules(freq_items):
   rules = rules.sort_values(['confidence', 'lift'], ascending =[False, False])
 
   return rules
+
+def graphing(x,y):
+  plt.plot(x,y)
+  plt.xlabel('Min support ')
+  plt.ylabel('Accuracy')
+  plt.title('Improvements')
+  plt.show()
