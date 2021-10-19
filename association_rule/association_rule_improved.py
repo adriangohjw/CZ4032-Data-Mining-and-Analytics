@@ -3,8 +3,10 @@ from performance_analyzer import get_df_memory_size
 from performance_optimizer import get_optimized_df_and_dict, repopulate_assoc_rules
 import time
 
+#input directory for the dataset to be analysed
 DATA_SOURCE = 'data/adult_cleaned.csv'
 DELIMITER = ','
+#input all the attributes to be used for analysis
 attributes = [
   'workclass', 'education', 'marital-status', 'occupation',
   'relationship', 'race', 'sex', 'native-country', 'income-group'

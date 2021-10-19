@@ -8,13 +8,15 @@ import time
 
 import numpy
 
+#input directory for the dataset to be analysed
 DATA_SOURCE = 'data/adult_cleaned.csv'
 DELIMITER = ','
+#input all the attributes to be used for analysis
 attributes = [
-
   'workclass', 'education', 'marital-status', 'occupation',
   'relationship', 'race', 'sex', 'native-country', 'income-group'
 ]
+#input the attribute to be predicted at this field
 attribute_to_classify = 'income-group'
 
 data = load_dataset(DATA_SOURCE, DELIMITER)
