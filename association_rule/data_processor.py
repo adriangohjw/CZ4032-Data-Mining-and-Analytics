@@ -96,7 +96,7 @@ def rehydrate_values(values, colname, references):
       continue
 
     if index == len(references):
-      results.append("more than " + str(references[index]))
+      results.append("more than " + str(references[index-1]))
       continue
   
     results.append(
