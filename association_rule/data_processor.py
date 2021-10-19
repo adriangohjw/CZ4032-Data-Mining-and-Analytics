@@ -64,6 +64,12 @@ def bin_dataframe(df, binning_references):
       )
       min_value = item
 
+    mapping_references[len(references)] = list(
+        df[
+          df[colname] >= min_value
+        ].index
+      )
+
     for i, indexes in mapping_references.items():
       df.loc[df.index.isin(indexes), colname] = colname + str(i)
 
