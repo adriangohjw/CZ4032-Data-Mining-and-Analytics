@@ -1,3 +1,6 @@
+# input @df is the dataframe to be optimized
+# output @df is the optimized dataframe with smaller memory size
+# output @reference_dict is the dictionary to be used to repopulate the original values
 def get_optimized_df_and_dict(df):
   reference_dict = {}
   
@@ -10,6 +13,9 @@ def get_optimized_df_and_dict(df):
 
   return df, reference_dict
 
+
+# input @assoc_rules are the association rules that needs to be mapped back to the original values
+# input @reference_dict is the dictionary to be used to repopulate the original values
 def repopulate_assoc_rules(assoc_rules, reference_dict):
   repopulate_cols('antecedents', assoc_rules, reference_dict)
   repopulate_cols('consequents', assoc_rules, reference_dict)
