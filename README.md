@@ -73,7 +73,7 @@ attribute_to_classify = 'DEATH_EVENT'
 
 #### 5) adult_cleaned: "income" (min_support = 0.2)
 
-DATA_SOURCE = 'data\adult_cleaned.csv'
+DATA_SOURCE = 'Adults\data_cleaned.csv'
 
 attributes = [
 'age','workclass','fnlwgt','education','education-num',
