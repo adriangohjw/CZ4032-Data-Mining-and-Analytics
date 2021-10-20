@@ -15,12 +15,13 @@ All required packages should have been installed!
 
 ### Instruction Guide to read the files
 
-### Part 2: Association Rule Mining & Building of Classifier
+### Part 2: Association Rule Mining & Building of Classifier (CBA)
 
-To run: 'association_rule\association_rule.py' and replace the code in lines 12 to 19 (stated below) with respect to the dataset
+To run: `association_rule\association_rule.py` and replace the code in lines 12 to 19 (stated below) with respect to the dataset
 
 #### 1) Breast Cancer: "diagnosis" (min_support = 0.05)
 
+```
 DATA_SOURCE = 'BreastCancer\data.csv'
 
 attributes = [
@@ -35,9 +36,11 @@ attributes = [
 ]
 
 attribute_to_classify = 'diagnosis'
+```
 
 #### 2) Bank Marketing: "Subscribed" (min_support = 0.3)
 
+```
 DATA_SOURCE = 'BankMarketing\bank.csv'
 
 attributes = [
@@ -47,9 +50,11 @@ attributes = [
 ]
 
 attribute_to_classify = 'Subscribed'
+```
 
 #### 3) Forest Fire: "Classes" (min_support = 0.1)
 
+```
 DATA_SOURCE = 'ForestFires\Algerian_forest_fires_dataset_UPDATE.csv'
 
 attributes = [
@@ -58,9 +63,11 @@ attributes = [
 ]
 
 attribute_to_classify = 'Classes'
+```
 
 #### 4) Heart_Failure: "DEATH_EVENT" (min_support = 0.1)
 
+```
 DATA_SOURCE = 'HeartFailure\heart_failure_clinical_records_dataset.csv'
 
 attributes = [
@@ -70,10 +77,12 @@ attributes = [
 ]
 
 attribute_to_classify = 'DEATH_EVENT'
+```
 
 #### 5) adult_cleaned: "income" (min_support = 0.2)
 
-DATA_SOURCE = 'data\adult_cleaned.csv'
+```
+DATA_SOURCE = 'Adults\data_cleaned.csv'
 
 attributes = [
 'age','workclass','fnlwgt','education','education-num',
@@ -83,9 +92,11 @@ attributes = [
 ]
 
 attribute_to_classify = 'income'
+```
 
 #### 6) Occupancy: "Occupancy" (min_support = 0.05)
 
+```
 DATA_SOURCE = 'Occupancy\data.csv'
 
 attributes = [
@@ -93,9 +104,11 @@ attributes = [
 ]
 
 attribute_to_classify = 'Occupancy'
+```
 
 #### 7) Wine: "Quality_enc" (min_support = 0.05)
 
+```
 DATA_SOURCE = 'Wine\wine.csv'
 
 attributes = [
@@ -106,9 +119,14 @@ attributes = [
 ]
 
 attribute_to_classify = 'quality'
+```
 
 ### Part 4: Other Classifiers
 
 We have separated 7 datasets into 7 folders named after each respective dataset.
-To run: Open the 'classification.ipynb' file for your preferred dataset
+To run: Open the `classification.ipynb` file for your preferred dataset
+
+### Part 5: Improvement to CBA
+
+Similar to Step 2, but run: `association_rule\association_rule_improved.py` instead
 

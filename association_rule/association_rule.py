@@ -15,7 +15,7 @@ pd.options.mode.chained_assignment = None
 #########################
 
 # DATA_SOURCE is the path to the dataset that we want to evaluate
-DATA_SOURCE = 'data/adult_cleaned.csv'
+DATA_SOURCE = 'Adults/data_cleaned.csv'
 DELIMITER = ','
 
 # These are all the attributes that will be used to perform the analysis
