@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import math
+import matplotlib.pyplot as plt
 from mlxtend.preprocessing import TransactionEncoder
 from mlxtend.frequent_patterns import apriori, association_rules
 
@@ -64,6 +65,12 @@ def bin_dataframe(df, binning_references):
       )
       min_value = item
 
+    mapping_references[len(references)] = list(
+        df[
+          df[colname] >= min_value
+        ].index
+      )
+
     for i, indexes in mapping_references.items():
       df.loc[df.index.isin(indexes), colname] = colname + str(i)
 
@@ -90,7 +97,7 @@ def rehydrate_values(values, colname, references):
       continue
 
     if index == len(references):
-      results.append("more than " + str(references[index]))
+      results.append("more than " + str(references[index-1]))
       continue
   
     results.append(
@@ -137,3 +144,10 @@ def get_association_rules(freq_items):
   rules = rules.sort_values(['confidence', 'lift'], ascending =[False, False])
 
   return rules
+
+def graphing(x,y):
+  plt.plot(x,y)
+  plt.xlabel('Min support ')
+  plt.ylabel('Accuracy')
+  plt.title('Improvements')
+  plt.show()
