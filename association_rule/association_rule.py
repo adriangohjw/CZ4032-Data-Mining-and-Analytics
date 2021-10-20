@@ -121,9 +121,9 @@ print()
 # Print out the classifiers generated
 #########################
 
-#pprint(classifiers)
-#print(len(classifiers))
-#print()
+pprint(classifiers)
+print(len(classifiers))
+print()
 
 
 #########################
